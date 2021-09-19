@@ -36,6 +36,14 @@ steps:
       - cat test_secret.txt
       - go build
 
+trigger:
+  branch:
+    - master
+  event:
+    - push
+    - pull_request
+    - tag
+
 volumes:
   - name: deps
     temp: {}
