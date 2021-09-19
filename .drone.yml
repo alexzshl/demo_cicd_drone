@@ -13,6 +13,9 @@ steps:
       - go version
       - go env
       - go test
+    when:
+      branch:
+        - master
   - name: build
     image: golang
     volumes:
