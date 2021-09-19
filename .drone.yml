@@ -4,6 +4,12 @@ type: docker
 name: default
 
 steps:
+  - name: test
+    image: golang
+    commands:
+      - go version
+      - go env
+      - go test
   - name: build
     image: golang
     environment:
@@ -13,3 +19,4 @@ steps:
       - echo $$A_SECRET
       - go run . > test_secret.txt
       - cat test_secret.txt
+      - go build
