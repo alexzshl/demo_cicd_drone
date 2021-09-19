@@ -6,17 +6,33 @@ name: default
 steps:
   - name: test
     image: golang
+    volumes:
+      - name: deps
+        path: /go
     commands:
       - go version
       - go env
       - go test
   - name: build
     image: golang
+    volumes:
+      - name: deps
+        path: /go
     environment:
+      USERNAME:
+        from_secret: username
+      PASSWORD:
+        from_secret: password
       A_SECRET:
         from_secret: a_secret
     commands:
+      - echo $$USERNAME
+      - echo $$PASSWORD
       - echo $$A_SECRET
       - go run . > test_secret.txt
       - cat test_secret.txt
       - go build
+
+volumes:
+  - name: deps
+    temp: {}
