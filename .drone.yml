@@ -39,6 +39,14 @@ steps:
       - go build
       - echo $PWD
 
+  - name: publish
+    image: plugins/github-release
+    settings:
+      api_key: $$API_KEY
+      files: dist/*
+    when:
+      event: tag
+
 trigger:
   branch:
     - master
