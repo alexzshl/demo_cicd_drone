@@ -62,6 +62,18 @@ trigger:
     - pull_request
     - tag
 
+pipeline:
+  notify:
+    image: drillster/drone-email
+    host: smtp.126.com
+    username:
+      from_secret: SMTP_USERNAME
+    password:
+      from_secret: SMTP_PASSWD
+    from: drone@alex.drone.com
+    when:
+      status: [ changed, failure ]
+
 volumes:
   - name: deps
     temp: {}
