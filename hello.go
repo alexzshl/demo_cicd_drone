@@ -4,5 +4,5 @@ import "fmt"
 
 func main() {
 	fmt.Println("hello drone")
-	fmt.Println("update2")
+	fmt.Println("aaa")
 }
