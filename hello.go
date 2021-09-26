@@ -8,7 +8,7 @@ import (
 
 func main() {
 	fmt.Println("hello drone")
-	fmt.Println("aaa")
+	fmt.Println("sss")
 
 	fmt.Println()
 
