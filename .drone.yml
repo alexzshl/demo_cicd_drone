@@ -33,7 +33,9 @@ steps:
       - echo $$PASSWORD
       - echo $$A_SECRET
       - go run . > test_secret.txt
+      - echo *********************
       - cat test_secret.txt
+      - echo *********************
       - go build
       - echo $PWD
 
