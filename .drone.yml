@@ -36,12 +36,7 @@ steps:
       - echo *********************
       - cat test_secret.txt
       - echo *********************
-      - go build -o bin/
       - go build -o dist/
-      - go build
-      - go build -o hello
-      - ls
-      - ls bin
       - ls dist
       - echo $PWD
 
@@ -56,7 +51,6 @@ steps:
       files:
         - dist/*
         - bin/*
-        - hello
     when:
       event: tag
 
