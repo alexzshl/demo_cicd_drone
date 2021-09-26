@@ -36,7 +36,7 @@ steps:
       - echo *********************
       - cat test_secret.txt
       - echo *********************
-      - go build
+      - go build -o dist/
       - echo $PWD
 
   - name: publish
